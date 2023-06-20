@@ -1,0 +1,41 @@
+@mixin button-size($padding-y, $padding-x, $border-radius, $font-size) {
+  padding: $padding-y $padding-x;
+  border-radius: $border-radius;
+
+  > .button-title {
+    font-size: $font-size;
+  }
+}
+
+.button {
+  cursor: pointer;
+
+  background-color: #e1f5f3;
+  border: 2px solid #085698;
+
+  &:hover {
+    background-color: #6dacd0;
+  }
+  &:active {
+    background-color: #085698;
+    > .button-title {
+      color: #6dacd0;
+    }
+  }
+
+  > .button-title {
+    color: #085698;
+  }
+}
+
+.button-size-sm {
+  @include button-size(5px, 10px, 5px, 12px);
+}
+
+.button-size-md {
+  @include button-size(10px, 20px, 7px, 14px);
+}
+
+.button-size-lg {
+  @include button-size(15px, 35px, 9px, 16px);
+}
